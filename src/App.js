@@ -1,0 +1,84 @@
+import "./styles.scss";
+import ProductsPage from "./pages/ProductsPage";
+import CartPage from "./pages/CartPage";
+import NotFoundPage from "./pages/NotFoundPage";
+
+import CartContext from "./contexts/CartContext";
+import { Switch, Route } from "react-router-dom";
+
+import { useState } from "react";
+
+// {productId: {productdetails, quantity},
+// productId: {productdetails, quantity}}
+//}
+export default function App() {
+  const [cart, setCart] = useState({});
+  console.log("App");
+  function increaseQuantity(product) {
+    const newCart = { ...cart };
+    if (!newCart[product.id]) {
+      newCart[product.id] = {
+        id: product.id,
+        title: product.title,
+        price: product.price.value,
+        quantity: 0
+      };
+    }
+    newCart[product.id].quantity += 1;
+    setCart(newCart);
+  }
+
+  function decreaseQuantity(product) {
+    const newCart = { ...cart };
+    if (!newCart[product.id]) return;
+    newCart[product.id].quantity -= 1;
+    if (newCart[product.id].quantity <= 0) {
+      delete newCart[product.id];
+    }
+    setCart(newCart);
+  }
+  // {cart: cart, increaseQuantity: increaseQuantity}
+  return (
+    <CartContext.Provider value={{ cart, increaseQuantity, decreaseQuantity }}>
+      <Switch>
+        <Route exact={true} path="/" component={ProductsPage} />
+        <Route exact={true} path="/cart" component={CartPage} />
+        <Route component={NotFoundPage} />
+      </Switch>
+    </CartContext.Provider>
+  );
+}
+
+////Product.js
+//Product.jsx
+//Product/index.js
+// Component
+// It is a function
+// returns jsx
+// start with a Capital letter
+// can be Pascal case
+
+// npm/npx create-react-app name
+
+// diff between framework and library
+// Frameworks are opinioted makes u do things in the way they way
+// library is flexible
+
+// NPM - Node package manager
+
+// React dom for dom manipulation and web apps
+// Native for mobile apps
+// ink for cli apps
+
+// major.minor.patch
+
+// ^8.2.2
+// 8.2.2> <9
+
+//  react-calendar: 1.0.0
+
+// how to install dependenices
+// npm install
+// package.json for having all dependencies
+// package.lock.json for locking them
+// jsx javascript xml notation
