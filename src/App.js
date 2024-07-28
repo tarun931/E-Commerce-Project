@@ -49,36 +49,3 @@ export default function App() {
   );
 }
 
-////Product.js
-//Product.jsx
-//Product/index.js
-// Component
-// It is a function
-// returns jsx
-// start with a Capital letter
-// can be Pascal case
-
-// npm/npx create-react-app name
-
-// diff between framework and library
-// Frameworks are opinioted makes u do things in the way they way
-// library is flexible
-
-// NPM - Node package manager
-
-// React dom for dom manipulation and web apps
-// Native for mobile apps
-// ink for cli apps
-
-// major.minor.patch
-
-// ^8.2.2
-// 8.2.2> <9
-
-//  react-calendar: 1.0.0
-
-// how to install dependenices
-// npm install
-// package.json for having all dependencies
-// package.lock.json for locking them
-// jsx javascript xml notation
