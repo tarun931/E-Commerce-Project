@@ -6,18 +6,6 @@ import { loadCategories } from "../../store/categories";
 function Categories() {
   const dispatch = useDispatch();
   useEffect(() => {
-    // async function loadCategories() {
-    //   dispatch(categoriesLoading());
-    //   try {
-    //     const res = await fetch(
-    //       "https://run.mocky.io/v3/297308ac-aeb0-4e98-8868-9c1d3a878a4c"
-    //     );
-    //     const data = await res.json();
-    //     dispatch({ type: "LOAD_CATEGORIES_DONE", payload: data });
-    //   } catch (e) {
-    //     dispatch({ type: "LOAD_CATEGORIES_ERROR", payload: e });
-    //   }
-    // }
     dispatch(loadCategories());
   }, []);
   const cat = useSelector((state) => state.categories);
