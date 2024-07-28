@@ -1,14 +1,6 @@
-// reducer is a function
-// state, action
-// action is an object which has two things
-// type, payload/value
-// dispatch
 
-//dispatch({type: "ADD_TO_CART", payload: products})
 import { omit } from "lodash";
 import { createStore } from "redux";
-
-//{productID:{quantity: 1}, productID2: {}}
 function cartReducer(state = { items: {} }, action) {
   switch (action.type) {
     case "ADD_TO_CART": {
@@ -39,8 +31,7 @@ function cartReducer(state = { items: {} }, action) {
       }
     }
 
-    // do some change on the state and
-    // return a new state
+    
     case "REMOVE_FROM_CART": {
       const product = action.payload;
 
