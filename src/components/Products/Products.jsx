@@ -12,9 +12,7 @@ function Products() {
   let [isLoading, setIsLoading] = useState(true);
   let [products, setProducts] = useState([]);
 
-  // let a =  useState(true);
-  // let isLoading = a[0];
-  // let setIsLoading = a[1];
+  
   useEffect(function () {
     fetch("https://602fc537a1e9d20017af105e.mockapi.io/api/v1//products")
       .then((response) => {
